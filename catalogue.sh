@@ -63,7 +63,7 @@ npm install &>> $LOGFILE
 
 VALIDATE $? "installing dependencies"
 
-cp C:\Users\pavilion\OneDrive\Desktop\gowthamdevops/catalogue.service /etc/systemd/system/catalogue.service &>> $LOGFILE
+cp C:/Users/pavilion/OneDrive/Desktop/gowthamdevops/catalogue.service /etc/systemd/system/catalogue.service &>> $LOGFILE
 
 VALIDATE $? "copying catalogue.service file"
 
