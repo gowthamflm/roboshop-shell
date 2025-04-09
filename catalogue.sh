@@ -40,6 +40,7 @@ VALIDATE $? "enabling nodejs module"
 dnf install nodejs -y &>> $LOGFILE
 
 VALIDATE $? "installing nodejs module"
+
 id roboshop
 if [$? -ne 0]
 then
@@ -47,8 +48,7 @@ then
     VALIDATE "Adding User"
 else
     echo -e "$R User is Already Exit $N...$Y Skipping $N"
-
-VALIDATE $? "adding user"
+fi
 
 mkdir -p /app &>> $LOGFILE
 
