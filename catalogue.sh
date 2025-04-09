@@ -68,7 +68,7 @@ npm install &>> $LOGFILE
 
 VALIDATE $? "installing dependencies"
 
-cp C:/Users/pavilion/OneDrive/Desktop/gowthamdevops/catalogue.service /etc/systemd/system/catalogue.service &>> $LOGFILE
+cp /c/Users/pavilion/OneDrive/Desktop/gowtham-roboshop/roboshop/catalogue.service /etc/systemd/system/catalogue.service &>> $LOGFILE
 
 VALIDATE $? "copying catalogue.service file"
 
@@ -84,7 +84,7 @@ systemctl start catalogue &>> $LOGFILE
 
 VALIDATE $? "starting catalogue" 
 
-cp C:/Users/pavilion/OneDrive/Desktop/gowthamdevops/catalogue.service  /etc/yum.repos.d/mongo.repo &>> $LOGFILE
+cp /c/Users/pavilion/OneDrive/Desktop/gowtham-roboshop/roboshop/catalogue.service  /etc/yum.repos.d/mongo.repo &>> $LOGFILE
 
 VALIDATE $? "copying mangorepo" 
 
