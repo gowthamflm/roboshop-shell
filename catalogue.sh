@@ -46,45 +46,45 @@ mkdir /app &>> $LOGFILE
 
 VALIDATE $? "creating directory"
 
-curl -o /tmp/catalogue.zip https://roboshop-builds.s3.amazonaws.com/catalogue.zip
+curl -o /tmp/catalogue.zip https://roboshop-builds.s3.amazonaws.com/catalogue.zip &>> $LOGFILE
 
 VALIDATE $? "Downloading catalogue application"
 
 cd /app
 
-unzip /tmp/catalogue.zip
+unzip /tmp/catalogue.zip &>> $LOGFILE
 
 VALIDATE $? "unzipping catalogue"
 
-npm install 
+npm install &>> $LOGFILE
 
 VALIDATE $? "installing dependencies"
 
-cp C:\Users\pavilion\OneDrive\Desktop\gowthamdevops/catalogue.service /etc/systemd/system/catalogue.service
+cp C:\Users\pavilion\OneDrive\Desktop\gowthamdevops/catalogue.service /etc/systemd/system/catalogue.service &>> $LOGFILE
 
 VALIDATE $? "copying catalogue.service file"
 
-systemctl daemon-reload 
+systemctl daemon-reload &>> $LOGFILE
 
 VALIDATE $? "catalogue deamon reload"
 
-systemctl enable catalogue
+systemctl enable catalogue &>> $LOGFILE
 
 VALIDATE $? "enabling catalogue"
 
-systemctl start catalogue
+systemctl start catalogue &>> $LOGFILE
 
-VALIDATE $? "starting catalogue"
+VALIDATE $? "starting catalogue" 
 
-cp C:\Users\pavilion\OneDrive\Desktop\gowthamdevops/mango.repo  /etc/yum.repos.d/mongo.repo
+cp C:\Users\pavilion\OneDrive\Desktop\gowthamdevops/mango.repo  /etc/yum.repos.d/mongo.repo &>> $LOGFILE
 
-VALIDATE $? "copying mangorepo"
+VALIDATE $? "copying mangorepo" 
 
-dnf install mongodb-org-shell -y
+dnf install mongodb-org-shell -y &>> $LOGFILE
 
 VALIDATE $? "install mangodb-org-shell"
 
-mongo --host mangodb.vengalareddy.site </app/schema/catalogue.js
+mongo --host mangodb.vengalareddy.site </app/schema/catalogue.js &>> $LOGFILE
 
 VALIDATE $? "loading catalogue data in to mangodb"
 
