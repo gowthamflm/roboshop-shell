@@ -40,8 +40,13 @@ VALIDATE $? "enabling nodejs module"
 dnf install nodejs -y &>> $LOGFILE
 
 VALIDATE $? "installing nodejs module"
-
-useradd roboshop &>> $LOGFILE
+id roboshop
+if [$? -ne 0]
+then
+    useradd roboshop &>> $LOGFILE
+    VALIDATE "Adding User"
+else
+    echo -e "$R User is Already Exit $N...$Y Skipping $N"
 
 VALIDATE $? "adding user"
 
@@ -79,7 +84,7 @@ systemctl start catalogue &>> $LOGFILE
 
 VALIDATE $? "starting catalogue" 
 
-cp C:\Users\pavilion\OneDrive\Desktop\gowthamdevops/mango.repo  /etc/yum.repos.d/mongo.repo &>> $LOGFILE
+cp C:/Users/pavilion/OneDrive/Desktop/gowthamdevops/catalogue.service  /etc/yum.repos.d/mongo.repo &>> $LOGFILE
 
 VALIDATE $? "copying mangorepo" 
 
